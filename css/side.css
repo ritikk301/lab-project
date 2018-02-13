@@ -1,0 +1,88 @@
+.personal label{ float:left;
+                   width :300px;
+				   text-align:right;
+                 margin-right:10px;
+				 }
+
+
+.family label{ float:left;
+                
+                 width :300px;
+				 text-align:right;
+                 margin-right:10px;}
+
+
+fieldset {background-color:#33cc33;
+width:820px;}
+#heading{background-color:#339966;
+          padding :20px 10px;
+		  text-align:center;
+		  width :1450px;
+		  border-radius:50px 0px 50px 0px;
+background-image:linear-gradiant(to bottom,#ff3333,#e60000);} 
+
+#head{background-color:#339966;
+          padding :20px 5px;
+		  text-align:center;
+		  width :1450px;
+border-radius:80px 0px 80px 0px;}
+#head.img{float:right}
+#btn{
+  background:#2ecc71;
+  width:20%;
+  text-align:center;
+  padding:20px;
+  
+  color:white;
+  border-radius:10px;
+  border: #27ae60 1px solid;
+  
+  margin-top:20px;
+  margin-bottom:20px;
+  float:left;
+  
+  margin-left:16px;
+  font-weight:800;
+  font-size:0.8em;
+}
+
+.btn:hover{
+  background:#2CC06B; 
+}
+
+#btn2{
+  float:left;
+  background:#3498db;
+  width:20%;  padding:20px;
+  color:white;
+  border-radius:10px;
+  text-align:center;
+  border: #2980b9 1px solid;
+  
+  margin-top:20px;
+  margin-bottom:20px;
+  margin-left:10px;
+  font-weight:800;
+  font-size:0.8em;
+  
+}
+
+#btn2:hover{ 
+background:#3594D2; 
+}
+
+
+table{border-collapse:collapse;
+border:1px solid green;
+padding:10px;}
+
+td,th{padding:10px;
+background-color:#1affff;}
+#d {
+    pointer-events:none; //This makes it not clickable
+    opacity:0.6;         //This grays it out to look disabled
+}
+#d2 {
+    pointer-events:none; //This makes it not clickable
+    opacity:0.6;         //This grays it out to look disabled
+}

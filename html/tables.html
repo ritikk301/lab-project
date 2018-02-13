@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<link rel="stylesheet" type="text/css" href="../css/side.css">
+<link rel="stylesheet" type="text/css" href="../css/nav.css">
+<script type="text/javascript" >
+	function check_info()
+		{var first = document.getElementById("10_school").value;
+		 var last = document.getElementById("10_year").value;
+		var dob = document.getElementById("10_percentage").value;
+		var email = document.getElementById("12_school").value;
+		var username = document.getElementById("12_year").value;
+		var col1 = document.getElementById("clg_name").value;
+		var col2 = document.getElementById("clg_year").value;
+		var col3 = document.getElementById("clg_dept").value;
+		var col4 = document.getElementById("clg_reg").value;
+		var col5 = document.getElementById("clg_roll").value;
+		var col6 = document.getElementById("clg_sem").value;
+		
+		if(first == "" || last == ""|| dob == ""|| email == "" || username == "" || pass == "" || col1 == "" || col2 == "" || col3 == "" || col4 == "" || col5 == "" || col6 == "")
+			{alert('FILL IN THE FORM FIRST');
+			return false;}
+		else{document.getElementById("d2").disabled = false;
+		return true;}}
+</script>
+</head>
+<body  background="../download (1).jpg"  >
+
+<nav>
+`	<ul>
+		<li ><a href="home.html">HOME</a> 
+</li>
+		<li><a href="login.html">ADMIN</a></li>
+		<li><a href="studentinfo.html">STUDENTS</a></li>
+  
+	</ul>
+</nav>
+<div id="heading">
+     <h1> STUDENT INFORMATION PORTAL</h1>
+</div>
+
+<nav>
+`	<ul>
+		<li ><a href="studentinfo.html">PERSONAL_INFO</a> 
+</li>
+		<li ><a href="tables.html">EDUCATION</a></li>
+		<li id="d2"><a href="family.html">FAMILY</a></li>
+  
+	</ul>
+</nav>
+<form action="family.html" method="post" onsubmit="return check_info();">
+<table id="example" class="display" cellspacing="0" width="100%" border=1>
+        <thead>
+            <tr id="4">
+			    <th>Degree </th>
+                <th>School Name</th>
+                <th>Year of Passing</th>
+                <th>PERCENTAGE/CGPA</th>
+                
+            </tr>
+        </thead>
+       
+        <tbody>
+            <tr id="1">
+				  <th>CLASS 10TH </th>
+				  <th><input type="text" id="10_school" name="10_school" ></td>
+				  <th><input type="text" id="10_year" name="10_year" ></td>
+				  <th><input type="text" id="10_percentage" name="10_percentage" ></td>
+			</tr>
+			
+			<tr id="2">
+				  <th>CLASS 12TH </th>
+				  <th><input type="text" id="12_school" name="12_school" ></td>
+				  <th><input type="text" id="12_year" name="12_year" ></td>
+				  <th><input type="text" id="12_percentage" name="12_percentage" ></td>
+			</tr id="3">
+			
+			
+		</tbody>
+</table>
+<br><br>
+<table id="example" class="display" cellspacing="0" width="100%" border=1>
+	<thead>
+			<tr>
+				<th>COLLEGE NAME</th>
+				<th>YEAR OF JOINING</th>
+				<th>REG. NO.</th>
+				<th> DEPARTMENT</th>
+				<th> ROLL NO. </th>
+				<th> SEMESTER</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+				<td><input type="text" id="clg_name" name="clg_name"></td>
+				<td><input type="text" id="clg_year" name="clg_year"></td>
+				<td><input type="text" id="clg_reg" name="clg_reg"></td>
+				<td><input type="text" id="clg_dept" name="clg_dept"></td>
+				<td><input type="text" id="clg_roll" name="clg_roll"></td>
+				<td><input type="text" id="clg_sem" name="clg_sem"></td>
+			</tr>
+	</tbody>
+</table>
+				
+
+
+ <div id="btn">
+  <input type="submit" name="submit" />
+  </div>
+   <div id="btn">
+  <input type="reset" name="reset" />
+  </div>
+
+</form>
+
+</body>
+</html>
+
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="../css/side.css"/>
+<link rel="stylesheet" type="text/css" href="../css/nav.css"/>
+<script type="text/javascript" >
+	function check_info()
+		{var first = document.getElementById("first").value;
+		 var last = document.getElementById("last").value;
+		var dob = document.getElementById("dob").value;
+		var email = document.getElementById("email").value;
+		var username = document.getElementById("username").value;
+		var pass = document.getElementById("pass").value;
+		if(first == "" || last == ""|| dob == ""|| email == "" || username == "" || pass == "")
+			{alert('FILL IN THE FORM FIRST');
+			return false;}
+		else{document.getElementById("d").disabled = false;
+		return true;}}
+</script>
+</head>
+<body background="../download (1).jpg" >
+
+<nav>
+`	<ul>
+		<li ><a href="home.html">HOME</a> 
+</li>
+		<li><a href="login.html">ADMIN</a></li>
+		<li><a href="studentinfo.html">STUDENTS</a></li>
+  
+	</ul>
+</nav>
+
+<div id="heading">
+ <h1> STUDENT INFORMATION PORTAL</h1>
+</div>
+<nav>
+`	<ul>
+		<li ><a href="studentinfo.html">PERSONAL_INFO</a> 
+</li>
+		<li id="d"><a href="tables.html">EDUCATION</a></li>
+		<li id="d2"><a href="family.html">FAMILY</a></li>
+  
+	</ul>
+</nav>
+
+<form action="tables.html" method="post" onsubmit="return check_info();">
+  <fieldset class="personal">
+    <legend><h2>Personalia:</h2></legend>
+   
+    <label for="first_name"> First Name: </label>
+      	<input type="text" name="first_name" id="first"><br>
+	<br>
+	
+		 <label for="last_name"> Last Name: </label>
+      	<input type="text" name="last_name" id="last"><br>
+    <br>
+     
+		 <label for="DOB"> DOB: </label>
+      	<input type="text" name="DOB" id="dob"><br>
+    
+	<br>
+	
+		 <label for="email"> email: </label>
+      	<input type="email" name="email" id="email"><br>
+    <br>
+	
+	
+		 <label for="username"> username: </label>
+      	<input type="text" name="username" id="username"><br>
+    <br>
+	
+		 <label for="password"> password: </label>
+      	<input type="password" name="password" id="pass"><br>
+    <br>
+	
+  </fieldset>
+   <div id="btn">
+  <input type="submit" name="submit" value="submit" />
+  </div>
+   <div id="btn">
+  <input type="reset" name="reset" />
+  </div>
+  
+ 
+  
+</form>
+
+</body>
+</html>

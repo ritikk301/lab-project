@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script type="text/javascript" >
+	function check_info()
+		{var first = document.getElementById("1").value;
+		 var last = document.getElementById("2").value;
+		var dob = document.getElementById("3").value;
+		var email = document.getElementById("4").value;
+		var username = document.getElementById("5").value;
+		var pass = document.getElementById("6").value;
+		var pass2 = document.getElementById("7").value;
+		if(first == "" || last == ""|| dob == ""|| email == "" || username == "" || pass == "" || pass2 == "")
+			{alert('FILL IN THE FORM FIRST');
+			return false;}
+		else{
+		return true;}}</script>
+<link rel="stylesheet" type="text/css" href="../css/side.css">
+<link rel="stylesheet" type="text/css" href="../css/nav.css">
+</head>
+<body background="../download (1).jpg" >
+
+<nav>
+`	<ul>
+		<li ><a href="home.html">HOME</a> 
+</li>
+		<li><a href="login.html">ADMIN</a></li>
+		<li><a href="studentinfo.html">STUDENTS</a></li>
+  
+	</ul>
+</nav>
+<div id="heading">
+ <h1> STUDENT INFORMATION PORTAL</h1>
+</div>
+<na
+<nav>
+`	<ul>
+		<li ><a href="studentinfo.html">PERSONAL_INFO</a> 
+</li>
+		<li ><a href="tables.html">EDUCATION</a></li>
+		<li ><a href="family.html">FAMILY</a></li>
+  
+	</ul>
+</nav>
+<br><br>
+<form action="studentlogin.html" method="post" onsubmit="return check_info();">
+ <fieldset class="family">
+    <legend><h2>FAMILY DETAILS</h2></legend>
+   <p>
+    <label for="fathers_name"> Father's Name: </label>
+      	<input type="text" name="fathers_name" id="1">
+	</P>
+	<p>
+		 <label for="occupation"> Father's occupation: </label>
+      	<input type="text" name="occupation" id="2"><br>
+    </p>
+	<p>
+		 <label for="mothers_name"> Mother's name: </label>
+      	<input type="text" name="mothers_name" id="3">
+    </p>
+	<p>
+		 <label for="moccupation"> Mother's occupation: </label>
+      	<input type="text" name="moccupation" id="4"><br>
+    </p>
+	 <p>
+		 <label for="income"> Family Income: </label>
+      	<input type="text" name="income" id="5"><br>
+    </p> 
+    
+     <p>
+		 <label for="fathers_email"> father's email: </label>
+      	<input type="text" name="fathers_email" id="6">
+    </p>
+	<p>
+		 <label for="fphone"> father's phone no: </label>
+      	<input type="text" name="fphone" id="7"><br>
+    </p>
+  </fieldset>
+  
+  
+   <div id="btn">
+  <input type="submit" name="submit" />
+  </div>
+   <div id="btn">
+  <input type="reset" name="reset" />
+  </div>
+ </body>
+ </html>
