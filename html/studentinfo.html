@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="../css/side.css"/>
 <link rel="stylesheet" type="text/css" href="../css/nav.css"/>
-<script type="text/javascript" >
+<!--<script type="text/javascript" >
 	function check_info()
 		{var first = document.getElementById("first").value;
 		 var last = document.getElementById("last").value;
@@ -17,7 +17,7 @@
 			return false;}
 		else{document.getElementById("d").disabled = false;
 		return true;}}
-</script>
+</script>  -->
 </head>
 <body background="../download (1).jpg" >
 
@@ -49,29 +49,29 @@
     <legend><h2>Personalia:</h2></legend>
    
     <label for="first_name"> First Name: </label>
-      	<input type="text" name="first_name" id="first"><br>
+      	<input type="text" name="first_name" id="first" required><br>
 	<br>
 	
 		 <label for="last_name"> Last Name: </label>
-      	<input type="text" name="last_name" id="last"><br>
+      	<input type="text" name="last_name" id="last" required><br>
     <br>
      
 		 <label for="DOB"> DOB: </label>
-      	<input type="text" name="DOB" id="dob"><br>
+      	<input type="date" name="DOB" id="dob" required><br>
     
 	<br>
 	
 		 <label for="email"> email: </label>
-      	<input type="email" name="email" id="email"><br>
+      	<input type="email" name="email" id="email" required><br>
     <br>
 	
 	
 		 <label for="username"> username: </label>
-      	<input type="text" name="username" id="username"><br>
+      	<input type="text" name="username" id="username" required><br>
     <br>
 	
 		 <label for="password"> password: </label>
-      	<input type="password" name="password" id="pass"><br>
+      	<input type="password" name="password" id="pass" required><br>
     <br>
 	
   </fieldset>
