@@ -5,26 +5,7 @@
 
 <link rel="stylesheet" type="text/css" href="../css/side.css">
 <link rel="stylesheet" type="text/css" href="../css/nav.css">
-<script type="text/javascript" >
-	function check_info()
-		{var first = document.getElementById("10_school").value;
-		 var last = document.getElementById("10_year").value;
-		var dob = document.getElementById("10_percentage").value;
-		var email = document.getElementById("12_school").value;
-		var username = document.getElementById("12_year").value;
-		var col1 = document.getElementById("clg_name").value;
-		var col2 = document.getElementById("clg_year").value;
-		var col3 = document.getElementById("clg_dept").value;
-		var col4 = document.getElementById("clg_reg").value;
-		var col5 = document.getElementById("clg_roll").value;
-		var col6 = document.getElementById("clg_sem").value;
-		
-		if(first == "" || last == ""|| dob == ""|| email == "" || username == "" || pass == "" || col1 == "" || col2 == "" || col3 == "" || col4 == "" || col5 == "" || col6 == "")
-			{alert('FILL IN THE FORM FIRST');
-			return false;}
-		else{document.getElementById("d2").disabled = false;
-		return true;}}
-</script>
+
 </head>
 <body  background="../download (1).jpg"  >
 
@@ -65,16 +46,16 @@
         <tbody>
             <tr id="1">
 				  <th>CLASS 10TH </th>
-				  <th><input type="text" id="10_school" name="10_school" ></td>
-				  <th><input type="text" id="10_year" name="10_year" ></td>
-				  <th><input type="text" id="10_percentage" name="10_percentage" ></td>
+				  <th><input type="text" id="10_school" name="10_school" onblur="validateName(0)" required></td>
+				  <th><input type="text" id="10_year" name="10_year" onblur="validateyear(1)"  required></td>
+				  <th><input type="text" id="10_percentage" name="10_percentage" onblur="validateper(2)" required></td>
 			</tr>
 			
 			<tr id="2">
 				  <th>CLASS 12TH </th>
-				  <th><input type="text" id="12_school" name="12_school" ></td>
-				  <th><input type="text" id="12_year" name="12_year" ></td>
-				  <th><input type="text" id="12_percentage" name="12_percentage" ></td>
+				  <th><input type="text" id="12_school" name="12_school" onblur="validateName(3)"  required></td>
+				  <th><input type="text" id="12_year" name="12_year" onblur="validateyear(4)"  required></td>
+				  <th><input type="text" id="12_percentage" name="12_percentage"  onblur="validateper(5)" required></td>
 			</tr id="3">
 			
 			
@@ -94,12 +75,12 @@
 	</thead>
 	<tbody>
 			<tr>
-				<td><input type="text" id="clg_name" name="clg_name"></td>
-				<td><input type="text" id="clg_year" name="clg_year"></td>
-				<td><input type="text" id="clg_reg" name="clg_reg"></td>
-				<td><input type="text" id="clg_dept" name="clg_dept"></td>
-				<td><input type="text" id="clg_roll" name="clg_roll"></td>
-				<td><input type="text" id="clg_sem" name="clg_sem"></td>
+				<td><input type="text" id="clg_name" name="clg_name" onblur="validateName(6)" required></td>
+				<td><input type="text" id="clg_year" name="clg_year" onblur="validateyear(7)" required></td>
+				<td><input type="text" id="clg_reg" name="clg_reg"  onblur="validateroll(8)"  required></td>
+				<td><input type="text" id="clg_dept" name="clg_dept"  onblur="validateName(9)" required></td>
+				<td><input type="text" id="clg_roll" name="clg_roll"  onblur="validateroll(10)" required></td>
+				<td><input type="text" id="clg_sem" name="clg_sem"  onblur="validatesem(11)"  required></td>
 			</tr>
 	</tbody>
 </table>
@@ -114,6 +95,69 @@
   </div>
 
 </form>
+
+<script type="text/javascript" >
+
+	function validateper(x){
+  		if(((document.getElementsByTagName("input")[x].value)>=1 && document.getElementsByTagName("input")[x].value)<=100 ){
+  			document.getElementsByTagName("input")[x].style.background ='#ccffcc';
+  			return true;
+		}else{
+  			document.getElementsByTagName("input")[x].style.background ='#e35152';
+  			return false; 
+			}
+		}
+		function validatesem(x){
+  		if(((document.getElementsByTagName("input")[x].value)>=1 && document.getElementsByTagName("input")[x].value)<=8 ){
+  			document.getElementsByTagName("input")[x].style.background ='#ccffcc';
+  			return true;
+		}else{
+  			document.getElementsByTagName("input")[x].style.background ='#e35152';
+  			return false; 
+			}
+		}
+		function validateroll(x){
+  		if(((document.getElementsByTagName("input")[x].value)>=2010 && document.getElementsByTagName("input")[x].value)<=20159999 ){
+  			document.getElementsByTagName("input")[x].style.background ='#ccffcc';
+  			return true;
+		}else{
+  			document.getElementsByTagName("input")[x].style.background ='#e35152';
+  			return false; 
+			}
+		}
+
+	function check_info()
+		{
+		if(validateName(0) && validateName(3) && validateName(6) && validateName(9) && validateyear(1) && validateyear(4) && validateyear(7) && validateper(2) && validateper(5) && validatesem(11) && validateroll(8) && validateroll(10))
+			{alert('FILL IN THE FORM CORRECTLY');
+			return false;}
+		else{document.getElementById("d2").disabled = false;
+		return true;}}
+
+		function validateName(x){
+  		var re = /[A-Za-z -']$/;
+  		if(re.test(document.getElementsByTagName("input")[x].value) ){
+  			document.getElementsByTagName("input")[x].style.background ='#ccffcc';
+  			return true;
+		}else{
+  			document.getElementsByTagName("input")[x].style.background ='#e35152';
+  			return false; 
+			}
+		}
+
+		function validateyear(x){
+  		//var re = new RegExp('^19[5-9]\d|20[0-4]\d|2050$');
+  		if(  (document.getElementsByTagName("input")[x].value) >=1950 && (document.getElementsByTagName("input")[x].value) <=2050 ){
+  			document.getElementsByTagName("input")[x].style.background ='#ccffcc';
+  			return true;
+		}else{
+  			document.getElementsByTagName("input")[x].style.background ='#e35152';
+  			return false; 
+			}
+		}
+
+		
+</script>
 
 </body>
 </html>

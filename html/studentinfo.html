@@ -4,20 +4,7 @@
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="../css/side.css"/>
 <link rel="stylesheet" type="text/css" href="../css/nav.css"/>
-<!--<script type="text/javascript" >
-	function check_info()
-		{var first = document.getElementById("first").value;
-		 var last = document.getElementById("last").value;
-		var dob = document.getElementById("dob").value;
-		var email = document.getElementById("email").value;
-		var username = document.getElementById("username").value;
-		var pass = document.getElementById("pass").value;
-		if(first == "" || last == ""|| dob == ""|| email == "" || username == "" || pass == "")
-			{alert('FILL IN THE FORM FIRST');
-			return false;}
-		else{document.getElementById("d").disabled = false;
-		return true;}}
-</script>  -->
+
 </head>
 <body background="../download (1).jpg" >
 
@@ -44,25 +31,25 @@
 	</ul>
 </nav>
 
-<form action="tables.html" method="post" onsubmit="return check_info();">
+<form name="myForm" action="tables.html" method="post" onsubmit="return check_info(); >
   <fieldset class="personal">
     <legend><h2>Personalia:</h2></legend>
    
-    <label for="first_name"> First Name: </label>
-      	<input type="text" name="first_name" id="first" required><br>
+    <label for="name"> First Name: </label>
+      	<input type="text" name="name" id="name"  onblur="validateName(0)" required/><br>
 	<br>
 	
-		 <label for="last_name"> Last Name: </label>
-      	<input type="text" name="last_name" id="last" required><br>
+		 <label for="lastname"> Last Name: </label>
+      	<input type="text" name="lastname" id="lastname" onblur="validateName(1)" required><br>
     <br>
      
 		 <label for="DOB"> DOB: </label>
-      	<input type="date" name="DOB" id="dob" required><br>
+      	<input type="date" name="DOB" id="dob"  required><br>
     
 	<br>
 	
 		 <label for="email"> email: </label>
-      	<input type="email" name="email" id="email" required><br>
+      	<input type="email" name="email" id="email" onblur="validateForm()" required><br>
     <br>
 	
 	
@@ -85,6 +72,41 @@
  
   
 </form>
+<script type="text/javascript" >
+	function check_info()
+		{var first = document.getElementById("first").value;
+		 var last = document.getElementById("last").value;
+		var dob = document.getElementById("dob").value;
+		var email = document.getElementById("email").value;
+		var username = document.getElementById("username").value;
+		var pass = document.getElementById("pass").value;
+		if(first == "" || last == ""|| dob == ""|| email == "" || username == "" || pass == "")
+			{alert('FILL IN THE FORM FIRST');
+			return false;}
+		else{document.getElementById("d").disabled = false;
+		return true;}}
 
+	function validateName(x){
+  		var re = /[A-Za-z -']$/;
+  		if(re.test(document.getElementsByTagName("input")[x].value) ){
+  			document.getElementsByTagName("input")[x].style.background ='#ccffcc';
+  			return true;
+		}else{
+  			document.getElementsByTagName("input")[x].style.background ='#e35152';
+  			return false; 
+		}
+	}
+
+	function validateForm() {
+    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    	}
+	}
+
+</script> 
 </body>
 </html>
